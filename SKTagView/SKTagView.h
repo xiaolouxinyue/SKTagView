@@ -14,6 +14,8 @@
 @property (assign, nonatomic) CGFloat lineSpacing;
 @property (assign, nonatomic) CGFloat interitemSpacing;
 @property (assign, nonatomic) CGFloat preferredMaxLayoutWidth;
+@property (assign, nonatomic) CGFloat preferredTagHeight;
+
 @property (assign, nonatomic) BOOL singleLine;
 @property (copy, nonatomic, nullable) void (^didTapTagAtIndex)(NSUInteger index);
 

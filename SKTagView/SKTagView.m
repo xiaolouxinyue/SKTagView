@@ -41,6 +41,8 @@
         NSInteger lineCount = 0;
         for (UIView *view in subviews) {
             CGSize size = view.intrinsicContentSize;
+            CGFloat height = self.preferredTagHeight > 0 ? self.preferredTagHeight : size.height;
+            size = CGSizeMake(size.width, height);
             if (previousView) {
                 CGFloat width = size.width;
                 currentX += itemSpacing;
@@ -67,7 +69,9 @@
             intrinsicWidth += size.width;
         }
         intrinsicWidth += itemSpacing * (subviews.count - 1) + rightPadding;
-        intrinsicHeight += ((UIView *)subviews.firstObject).intrinsicContentSize.height + bottomPadding;
+        
+        CGFloat height = self.preferredTagHeight > 0 ? self.preferredTagHeight : ((UIView *)subviews.firstObject).intrinsicContentSize.height;
+        intrinsicHeight += height + bottomPadding;
     }
     
     return CGSizeMake(intrinsicWidth, intrinsicHeight);
@@ -119,6 +123,8 @@
     if (!self.singleLine && self.preferredMaxLayoutWidth > 0) {
         for (UIView *view in subviews) {
             CGSize size = view.intrinsicContentSize;
+            CGFloat height = self.preferredTagHeight > 0 ? self.preferredTagHeight : size.height;
+            size = CGSizeMake(size.width, height);
             if (previousView) {
                 CGFloat width = size.width;
                 currentX += itemSpacing;
@@ -141,6 +147,8 @@
     } else {
         for (UIView *view in subviews) {
             CGSize size = view.intrinsicContentSize;
+            CGFloat height = self.preferredTagHeight > 0 ? self.preferredTagHeight : size.height;
+            size = CGSizeMake(size.width, height);
             view.frame = CGRectMake(currentX, topPadding, size.width, size.height);
             currentX += size.width;
             currentX += itemSpacing;
