@@ -7,7 +7,11 @@
 
 This library is forked from [SKTagView](https://github.com/zsk425/SKTagView), which tries to build a view displaying tags without using UICollectionView and supports Autolayout.
 
-## And add a property preferredTagHeight to set tag height.
+### Tips
+add a property preferredTagHeight to set tag height.
+```objc
+    tagView.preferredTagHeight = 28;//set tag height
+```
 
 ### Installation with CocoaPods
 
