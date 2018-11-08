@@ -31,6 +31,7 @@ Check out the project. It contains the usages of normal way and in UITableViewCe
     view.padding = UIEdgeInsetsMake(10, 25, 10, 25);
     view.interitemSpacing = 8;
     view.lineSpacing = 10;
+    view.preferredTagHeight = 28;//set tag height
 	//Handle tag's tap event
 	view.didTapTagAtIndex = ^(NSUInteger index){
 		NSLog(@"Tap");
